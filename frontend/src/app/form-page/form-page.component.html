@@ -1,0 +1,43 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <label>Student name</label><br />
+    <input type="text" formControlName="name" /><br />
+    <small *ngIf="controls.name.invalid && controls.name.dirty" style="color: red;">
+        Please insert name
+    </small>
+    <br /><br />
+    <label>Email</label><br />
+    <input type="text" formControlName="email"/><br />
+    <small *ngIf="controls.email.invalid && controls.email.dirty" style="color: red;">
+        Please insert email
+    </small>
+    <br /><br />
+    <label>Password</label><br />
+    <input type="password" formControlName="password"/><br />
+    <small *ngIf="controls.password.invalid && controls.password.dirty" style="color: red;">
+        Please insert password
+    </small>
+    <br /><br />
+    <label>Designation</label><br />
+    <select formControlName="designation">
+        <option value="">Select</option>
+        <option value="Manager">Manager</option>
+        <option value="CR">CR</option>
+    </select>
+    <br/>
+    <small *ngIf="controls.designation.invalid && controls.designation.dirty" style="color: red;">
+        Please select a designation
+    </small>
+    <br /><br />
+    <label>Department</label><br />
+    <input type="radio" formControlName="department" value="Administration"/>Administration
+    <input type="radio" formControlName="department" value="Topper"/>Topper
+    <br /><br />
+    <label>Salary</label><br />
+    <input type="number" formControlName="salary"/>
+    <br/>
+    <small *ngIf="controls.salary.invalid && controls.salary.dirty" style="color: red;">
+        Please provide salary info
+    </small>
+    <br/><br/>
+    <input type="submit" value="Submit"/>
+</form>
